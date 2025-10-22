@@ -7,4 +7,12 @@
     <RootNamespace>SistemaBancario2._0</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Pages\Logout.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Logout.cshtml.cs" />
+  </ItemGroup>
+
 </Project>
