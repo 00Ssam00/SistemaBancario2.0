@@ -1,0 +1,418 @@
+﻿@page
+@using SistemaBancario2._0.Models
+@model TransaccionesModel
+@{
+    ViewData["Title"] = "Transacciones";
+}
+
+<!-- Verificar sesión -->
+@if (Model.UsuarioActual == null)
+{
+    <div class="alert alert-warning text-center">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        Debes iniciar sesión para acceder a esta página.
+        <a href="/Login" class="btn btn-primary ms-3">Iniciar Sesión</a>
+    </div>
+    return;
+}
+
+<!-- Header con información del usuario -->
+<div class="hero-section mb-4 fade-in">
+    <div class="row align-items-center position-relative" style="z-index: 1;">
+        <div class="col-md-2 text-center mb-3 mb-md-0">
+            @{
+                var iniciales = ObtenerIniciales(Model.UsuarioActual.Nombre);
+                var colorAvatar = ObtenerColorAvatar(Model.UsuarioActual.Nombre);
+            }
+            <div class="avatar-circle avatar-xl avatar-color-@colorAvatar mx-auto">
+                @iniciales
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h2 class="mb-2 fw-bold">
+                ¡Hola, @Model.UsuarioActual.Nombre! 👋
+            </h2>
+            <p class="mb-1 opacity-75">
+                <i class="fas fa-id-card me-2"></i>
+                Cuenta: <strong>@Model.UsuarioActual.CuentaBancaria.NumeroCuenta</strong>
+            </p>
+            <p class="mb-0">
+                <i class="fas fa-wallet me-2"></i>
+                Tipo: <strong>@Model.ObtenerTipoCuenta()</strong>
+            </p>
+        </div>
+        <div class="col-md-5 text-md-end mt-3 mt-md-0">
+            <p class="mb-1 opacity-75">Saldo Disponible</p>
+            <h1 class="mb-0 fw-bold display-4">$@Model.UsuarioActual.CuentaBancaria.Saldo.ToString("N0")</h1>
+            @if (Model.UsuarioActual.CuentaBancaria is CuentaCorriente cc)
+            {
+                <small class="d-block mt-2 opacity-75">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Sobregiro disponible: <strong>$@cc.ObtenerSobregiroDisponible().ToString("N0")</strong>
+                </small>
+            }
+            @if (Model.UsuarioActual.CuentaBancaria is TarjetaCredito tc)
+            {
+                <small class="d-block mt-2 opacity-75">
+                    <i class="fas fa-credit-card me-1"></i>
+                    Crédito disponible: <strong>$@tc.CreditoDisponible.ToString("N0")</strong>
+                </small>
+                <small class="d-block opacity-75">
+                    Deuda total: <strong>$@tc.DeudaTotal.ToString("N0")</strong>
+                </small>
+            }
+        </div>
+    </div>
+</div>
+
+@functions {
+    private string ObtenerIniciales(string nombre)
+    {
+        if (string.IsNullOrWhiteSpace(nombre))
+            return "US";
+
+        var palabras = nombre.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (palabras.Length == 1)
+        {
+            return palabras[0].Length >= 2
+                ? palabras[0].Substring(0, 2).ToUpper()
+                : palabras[0].ToUpper();
+        }
+        else
+        {
+            return (palabras[0][0].ToString() + palabras[1][0].ToString()).ToUpper();
+        }
+    }
+
+    private int ObtenerColorAvatar(string nombre)
+    {
+        if (string.IsNullOrWhiteSpace(nombre))
+            return 1;
+
+        int hash = 0;
+        foreach (char c in nombre)
+        {
+            hash += (int)c;
+        }
+
+        return (hash % 5) + 1;
+    }
+}
+
+<!-- Mensajes -->
+@if (!string.IsNullOrEmpty(Model.MensajeError))
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        @Model.MensajeError
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model.MensajeExito))
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle me-2"></i>
+        @Model.MensajeExito
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<!-- Menú de operaciones -->
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.1s;">
+            <button class="btn btn-light w-100 h-100 p-4 border-0" data-bs-toggle="modal" data-bs-target="#modalConsignar" style="background: linear-gradient(135deg, #90EE90 0%, #A8F0A8 100%); color: white;">
+                <div class="icon-box success mx-auto mb-3" style="background: rgba(255, 255, 255, 0.3);">
+                    <i class="fas fa-arrow-down fa-2x"></i>
+                </div>
+                <h5 class="mb-0 fw-bold">Consignar</h5>
+                <small class="opacity-75">Depositar dinero</small>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.2s;">
+            <button class="btn btn-light w-100 h-100 p-4 border-0" data-bs-toggle="modal" data-bs-target="#modalRetirar" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white;">
+                <div class="icon-box primary mx-auto mb-3" style="background: rgba(255, 255, 255, 0.3);">
+                    <i class="fas fa-arrow-up fa-2x"></i>
+                </div>
+                <h5 class="mb-0 fw-bold">Retirar</h5>
+                <small class="opacity-75">Sacar dinero</small>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.3s;">
+            <button class="btn btn-light w-100 h-100 p-4 border-0" data-bs-toggle="modal" data-bs-target="#modalTransferir" style="background: linear-gradient(135deg, var(--color-blue) 0%, #B8D5F0 100%); color: white;">
+                <div class="icon-box info mx-auto mb-3" style="background: rgba(255, 255, 255, 0.3);">
+                    <i class="fas fa-exchange-alt fa-2x"></i>
+                </div>
+                <h5 class="mb-0 fw-bold">Transferir</h5>
+                <small class="opacity-75">Enviar a otra cuenta</small>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Botones adicionales -->
+<div class="row g-3 mb-4">
+    @if (Model.UsuarioActual.CuentaBancaria is TarjetaCredito)
+    {
+        <div class="col-md-4">
+            <button class="btn btn-warning w-100 shadow-custom" data-bs-toggle="modal" data-bs-target="#modalCompraCredito">
+                <i class="fas fa-shopping-cart me-2"></i>Compra con Crédito
+            </button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn w-100 shadow-custom" data-bs-toggle="modal" data-bs-target="#modalPagarCredito" style="background: linear-gradient(135deg, var(--color-purple) 0%, #D4B5E8 100%); color: white; border: none;">
+                <i class="fas fa-money-bill-wave me-2"></i>Pagar Tarjeta
+            </button>
+        </div>
+    }
+    <div class="col-md-4">
+        <button class="btn btn-dark w-100 shadow-custom" data-bs-toggle="collapse" data-bs-target="#collapseHistorial" style="background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%); border: none;">
+            <i class="fas fa-history me-2"></i>Ver Movimientos
+        </button>
+    </div>
+</div>
+
+<!-- Historial de movimientos (colapsable) -->
+<div class="collapse" id="collapseHistorial">
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">
+                <i class="fas fa-list me-2"></i>Historial de Movimientos
+            </h5>
+        </div>
+        <div class="card-body">
+            @if (Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.Count == 0)
+            {
+                <p class="text-muted text-center mb-0">No hay movimientos registrados</p>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Fecha y Hora</th>
+                                <th>Tipo</th>
+                                <th>Monto</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var movimiento in Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.OrderByDescending(m => m.FechaHora))
+                            {
+                                <tr>
+                                    <td>@movimiento.FechaHora.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                                    <td>
+                                        @if (movimiento.Monto >= 0)
+                                        {
+                                            <span class="badge bg-success">@movimiento.Tipo</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">@movimiento.Tipo</span>
+                                        }
+                                    </td>
+                                    <td class="@(movimiento.Monto >= 0 ? "text-success" : "text-danger") fw-bold">
+                                        $@Math.Abs(movimiento.Monto).ToString("N0")
+                                    </td>
+                                    <td>@movimiento.Detalle</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Consignar -->
+<div class="modal fade" id="modalConsignar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Consignar">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-arrow-down me-2"></i>Consignar Dinero
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Monto a Consignar</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" name="monto" placeholder="0" min="1000" step="1000" required />
+                        </div>
+                        <small class="form-text text-muted">Mínimo: $1.000 COP</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check me-2"></i>Consignar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Retirar -->
+<div class="modal fade" id="modalRetirar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Retirar">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-arrow-up me-2"></i>Retirar Dinero
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Monto a Retirar</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" name="monto" placeholder="0" min="1000" step="1000" required />
+                        </div>
+                        <small class="form-text text-muted">
+                            Saldo disponible: $@Model.UsuarioActual.CuentaBancaria.Saldo.ToString("N0")
+                        </small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-check me-2"></i>Retirar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Transferir -->
+<div class="modal fade" id="modalTransferir" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Transferir">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-exchange-alt me-2"></i>Transferir Dinero
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Cuenta Destino</label>
+                        <input type="text" class="form-control" name="cuentaDestino" placeholder="12345" maxlength="5" required />
+                        <small class="form-text text-muted">Número de cuenta de 5 dígitos</small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Monto a Transferir</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" name="monto" placeholder="0" min="1000" step="1000" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-info text-white">
+                        <i class="fas fa-check me-2"></i>Transferir
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Compra con Crédito (solo tarjetas) -->
+<div class="modal fade" id="modalCompraCredito" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="CompraCredito">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title">
+                        <i class="fas fa-shopping-cart me-2"></i>Compra con Tarjeta de Crédito
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Descripción de la Compra</label>
+                        <input type="text" class="form-control" name="descripcion" placeholder="Ej: Compra en supermercado" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Monto</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" name="monto" placeholder="0" min="1000" step="1000" required />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Número de Cuotas</label>
+                        <select class="form-select" name="cuotas" required>
+                            <option value="1">1 cuota (sin interés)</option>
+                            <option value="2">2 cuotas (sin interés)</option>
+                            <option value="3">3 cuotas (1.9% mensual)</option>
+                            <option value="6">6 cuotas (1.9% mensual)</option>
+                            <option value="12">12 cuotas (2.3% mensual)</option>
+                            <option value="24">24 cuotas (2.3% mensual)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-warning">
+                        <i class="fas fa-check me-2"></i>Realizar Compra
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: Pagar Tarjeta -->
+<div class="modal fade" id="modalPagarCredito" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="PagarCredito">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-money-bill-wave me-2"></i>Pagar Tarjeta de Crédito
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Monto a Pagar</label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" name="monto" placeholder="0" min="1000" step="1000" required />
+                        </div>
+                        @if (Model.UsuarioActual.CuentaBancaria is TarjetaCredito tc2)
+                        {
+                            <small class="form-text text-muted">
+                                Deuda actual: $@tc2.DeudaTotal.ToString("N0")
+                            </small>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check me-2"></i>Pagar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

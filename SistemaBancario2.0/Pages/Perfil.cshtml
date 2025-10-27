@@ -1,0 +1,359 @@
+﻿@page
+@using SistemaBancario2._0.Models
+@model PerfilModel
+@{
+    ViewData["Title"] = "Mi Perfil";
+}
+
+<!-- Verificar sesión -->
+@if (Model.UsuarioActual == null)
+{
+    <div class="alert alert-warning text-center">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        Debes iniciar sesión para acceder a esta página.
+        <a href="/Login" class="btn btn-primary ms-3">Iniciar Sesión</a>
+    </div>
+    return;
+}
+
+<!-- Header -->
+<div class="hero-section mb-4 fade-in">
+    <div class="text-center position-relative" style="z-index: 1;">
+        @{
+            var iniciales = ObtenerIniciales(Model.UsuarioActual.Nombre);
+            var colorAvatar = ObtenerColorAvatar(Model.UsuarioActual.Nombre);
+        }
+        <div class="avatar-circle avatar-xl avatar-color-@colorAvatar mx-auto mb-3 pulse">
+            @iniciales
+        </div>
+        <h2 class="mb-2 fw-bold">Mi Perfil</h2>
+        <p class="mb-0 opacity-75">Gestiona tu información personal y seguridad</p>
+    </div>
+</div>
+
+@functions {
+    private string ObtenerIniciales(string nombre)
+    {
+        if (string.IsNullOrWhiteSpace(nombre))
+            return "US";
+
+        var palabras = nombre.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (palabras.Length == 1)
+        {
+            return palabras[0].Length >= 2
+                ? palabras[0].Substring(0, 2).ToUpper()
+                : palabras[0].ToUpper();
+        }
+        else
+        {
+            return (palabras[0][0].ToString() + palabras[1][0].ToString()).ToUpper();
+        }
+    }
+
+    private int ObtenerColorAvatar(string nombre)
+    {
+        if (string.IsNullOrWhiteSpace(nombre))
+            return 1;
+
+        int hash = 0;
+        foreach (char c in nombre)
+        {
+            hash += (int)c;
+        }
+
+        return (hash % 5) + 1;
+    }
+}
+
+<!-- Mensajes -->
+@if (!string.IsNullOrEmpty(Model.MensajeError))
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        @Model.MensajeError
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model.MensajeExito))
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="fas fa-check-circle me-2"></i>
+        @Model.MensajeExito
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="row g-4">
+    <!-- Columna izquierda: Información personal -->
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-user me-2"></i>Información Personal
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-page-handler="ActualizarPerfil">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">
+                            <i class="fas fa-signature me-2"></i>Nombre Completo
+                        </label>
+                        <input type="text"
+                               class="form-control"
+                               id="nombre"
+                               asp-for="Nombre"
+                               value="@Model.UsuarioActual.Nombre"
+                               required />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-id-card me-2"></i>Número de Cuenta
+                        </label>
+                        <input type="text"
+                               class="form-control bg-light"
+                               value="@Model.UsuarioActual.CuentaBancaria.NumeroCuenta"
+                               readonly />
+                        <small class="form-text text-muted">No se puede modificar</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-wallet me-2"></i>Tipo de Cuenta
+                        </label>
+                        <input type="text"
+                               class="form-control bg-light"
+                               value="@Model.ObtenerTipoCuenta()"
+                               readonly />
+                        <small class="form-text text-muted">No se puede modificar</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <i class="fas fa-money-bill-wave me-2"></i>Saldo Actual
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light">$</span>
+                            <input type="text"
+                                   class="form-control bg-light fw-bold text-success"
+                                   value="@Model.UsuarioActual.CuentaBancaria.Saldo.ToString("N0")"
+                                   readonly />
+                        </div>
+                    </div>
+
+                    @if (Model.UsuarioActual.CuentaBancaria is TarjetaCredito tc)
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-credit-card me-2"></i>Límite de Crédito
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">$</span>
+                                <input type="text"
+                                       class="form-control bg-light"
+                                       value="@tc.LimiteCredito.ToString("N0")"
+                                       readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-chart-line me-2"></i>Crédito Disponible
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">$</span>
+                                <input type="text"
+                                       class="form-control bg-light fw-bold text-primary"
+                                       value="@tc.CreditoDisponible.ToString("N0")"
+                                       readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-exclamation-triangle me-2"></i>Deuda Total
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">$</span>
+                                <input type="text"
+                                       class="form-control bg-light fw-bold text-danger"
+                                       value="@tc.DeudaTotal.ToString("N0")"
+                                       readonly />
+                            </div>
+                        </div>
+                    }
+
+                    @if (Model.UsuarioActual.CuentaBancaria is CuentaCorriente cc)
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <i class="fas fa-percentage me-2"></i>Sobregiro Disponible
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">$</span>
+                                <input type="text"
+                                       class="form-control bg-light fw-bold text-info"
+                                       value="@cc.ObtenerSobregiroDisponible().ToString("N0")"
+                                       readonly />
+                            </div>
+                        </div>
+                    }
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg" disabled>
+                            <i class="fas fa-save me-2"></i>Guardar Cambios
+                        </button>
+                        <small class="form-text text-muted text-center mt-2">
+                            (Edición de perfil deshabilitada - Solo lectura)
+                        </small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna derecha: Seguridad -->
+    <div class="col-lg-6">
+        <!-- Cambiar Clave -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-warning">
+                <h5 class="mb-0">
+                    <i class="fas fa-lock me-2"></i>Cambiar Clave
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-page-handler="CambiarClave">
+                    <div class="mb-3">
+                        <label for="claveActual" class="form-label">
+                            <i class="fas fa-key me-2"></i>Clave Actual
+                        </label>
+                        <input type="password"
+                               class="form-control"
+                               id="claveActual"
+                               name="claveActual"
+                               placeholder="****"
+                               maxlength="4"
+                               required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nuevaClave" class="form-label">
+                            <i class="fas fa-lock me-2"></i>Nueva Clave
+                        </label>
+                        <input type="password"
+                               class="form-control"
+                               id="nuevaClave"
+                               name="nuevaClave"
+                               placeholder="****"
+                               maxlength="4"
+                               required />
+                        <small class="form-text text-muted">4 dígitos numéricos</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirmarClave" class="form-label">
+                            <i class="fas fa-lock me-2"></i>Confirmar Nueva Clave
+                        </label>
+                        <input type="password"
+                               class="form-control"
+                               id="confirmarClave"
+                               name="confirmarClave"
+                               placeholder="****"
+                               maxlength="4"
+                               required />
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-warning btn-lg">
+                            <i class="fas fa-check-circle me-2"></i>Cambiar Clave
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Estado de la Cuenta -->
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-shield-alt me-2"></i>Estado de la Cuenta
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="flex-shrink-0">
+                        @if (Model.UsuarioActual.Estado)
+                        {
+                            <i class="fas fa-check-circle fa-3x text-success"></i>
+                        }
+                        else
+                        {
+                            <i class="fas fa-times-circle fa-3x text-danger"></i>
+                        }
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        @if (Model.UsuarioActual.Estado)
+                        {
+                            <h5 class="text-success mb-1">Cuenta Activa</h5>
+                            <p class="text-muted mb-0">Tu cuenta está funcionando correctamente</p>
+                        }
+                        else
+                        {
+                            <h5 class="text-danger mb-1">Cuenta Bloqueada</h5>
+                            <p class="text-muted mb-0">Contacta con soporte para desbloquearla</p>
+                        }
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="mb-2">
+                    <i class="fas fa-calendar-alt text-muted me-2"></i>
+                    <strong>Fecha de apertura:</strong>
+                    <span class="text-muted">
+                        @(Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.FirstOrDefault()?.FechaHora.ToString("dd/MM/yyyy") ?? "N/A")
+                    </span>
+                </div>
+
+                <div class="mb-2">
+                    <i class="fas fa-exchange-alt text-muted me-2"></i>
+                    <strong>Total de movimientos:</strong>
+                    <span class="badge bg-primary">@Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.Count</span>
+                </div>
+
+                @if (Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.Any())
+                {
+                    <div class="mb-2">
+                        <i class="fas fa-clock text-muted me-2"></i>
+                        <strong>Última transacción:</strong>
+                        <span class="text-muted">
+                            @Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.Last().FechaHora.ToString("dd/MM/yyyy HH:mm")
+                        </span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Botón volver -->
+        <div class="mt-4">
+            <a href="/Transacciones" class="btn btn-secondary w-100">
+                <i class="fas fa-arrow-left me-2"></i>Volver a Transacciones
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Validar solo números en las claves
+        document.querySelectorAll('input[type="password"]').forEach(function(input) {
+            input.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+    </script>
+}

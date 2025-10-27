@@ -1,10 +1,254 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section Moderna -->
+<div class="hero-section mb-5 fade-in">
+    <div class="text-center position-relative" style="z-index: 1;">
+        <div class="mb-4">
+            <i class="fas fa-university fa-5x pulse"></i>
+        </div>
+        <h1 class="display-3 fw-bold mb-3">Bienvenido a Mi Plata Bank</h1>
+        <p class="lead mb-4 fs-4">Tu banco digital de confianza en Colombia 🇨🇴</p>
+        <p class="mb-5 opacity-75">Gestiona tus finanzas de manera fácil, rápida y segura</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="/Login" class="btn btn-light btn-lg px-5 shadow-custom">
+                <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+            </a>
+            <a href="/Register" class="btn btn-outline-light btn-lg px-5">
+                <i class="fas fa-user-plus me-2"></i>Crear Cuenta Gratis
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Tipos de Cuentas -->
+<div class="text-center mb-5">
+    <h2 class="text-gradient fw-bold mb-4">
+        <i class="fas fa-star me-2"></i>Nuestras Cuentas
+    </h2>
+    <p class="text-muted fs-5">Elige la cuenta perfecta para ti</p>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 border-0 fade-in" style="animation-delay: 0.1s;">
+            <div class="card-body text-center p-4">
+                <div class="icon-box success mx-auto mb-4">
+                    <i class="fas fa-piggy-bank fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Cuenta de Ahorro</h4>
+                <div class="badge bg-success mb-3">¡Gana Intereses!</div>
+                <p class="text-muted mb-4">
+                    Gana <strong class="text-gradient">1.5% mensual</strong> cada vez que retiras.
+                    Tu dinero trabaja para ti automáticamente.
+                </p>
+                <ul class="list-unstyled text-start">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Interés del 1.5% mensual
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Sin cuota de manejo
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Retiros ilimitados
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 border-0 fade-in" style="animation-delay: 0.2s;">
+            <div class="card-body text-center p-4">
+                <div class="icon-box primary mx-auto mb-4">
+                    <i class="fas fa-wallet fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Cuenta Corriente</h4>
+                <div class="badge" style="background: var(--color-primary); color: white;">Sobregiro 20%</div>
+                <p class="text-muted mb-4 mt-3">
+                    Máxima flexibilidad con <strong class="text-gradient">sobregiro del 20%</strong>.
+                    Nunca te quedes sin efectivo en emergencias.
+                </p>
+                <ul class="list-unstyled text-start">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle me-2" style="color: var(--color-primary);"></i>
+                        Sobregiro del 20%
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle me-2" style="color: var(--color-primary);"></i>
+                        Transacciones ilimitadas
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle me-2" style="color: var(--color-primary);"></i>
+                        Sin intereses
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 border-0 fade-in" style="animation-delay: 0.3s;">
+            <div class="card-body text-center p-4">
+                <div class="icon-box warning mx-auto mb-4">
+                    <i class="fas fa-credit-card fa-2x"></i>
+                </div>
+                <h4 class="fw-bold mb-3">Tarjeta de Crédito</h4>
+                <div class="badge bg-warning text-dark mb-3">0% hasta 2 cuotas</div>
+                <p class="text-muted mb-4">
+                    Compra en cuotas con las mejores tasas.
+                    <strong class="text-gradient">Sin interés</strong> hasta 2 cuotas.
+                </p>
+                <ul class="list-unstyled text-start">
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-warning me-2"></i>
+                        0% interés (1-2 cuotas)
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-warning me-2"></i>
+                        1.9% interés (3-6 cuotas)
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-warning me-2"></i>
+                        2.3% interés (7+ cuotas)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Servicios Destacados -->
+<div class="card border-0 shadow-custom rounded-custom mb-5 fade-in">
+    <div class="card-body p-5">
+        <div class="text-center mb-5">
+            <h2 class="text-gradient fw-bold mb-3">
+                <i class="fas fa-gem me-2"></i>¿Por qué elegirnos?
+            </h2>
+            <p class="text-muted fs-5">Servicios diseñados para ti</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="d-flex align-items-start p-3 rounded-custom" style="background-color: var(--color-background);">
+                    <div class="icon-box info me-3">
+                        <i class="fas fa-exchange-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2">Transferencias Instantáneas</h5>
+                        <p class="text-muted mb-0">Transfiere entre tus cuentas o a terceros de forma inmediata y segura las 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-start p-3 rounded-custom" style="background-color: var(--color-background);">
+                    <div class="icon-box primary me-3">
+                        <i class="fas fa-history fa-lg"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2">Historial Completo</h5>
+                        <p class="text-muted mb-0">Consulta todos tus movimientos con fecha, hora y descripción detallada en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-start p-3 rounded-custom" style="background-color: var(--color-background);">
+                    <div class="icon-box success me-3">
+                        <i class="fas fa-shield-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2">Seguridad Garantizada</h5>
+                        <p class="text-muted mb-0">Protección avanzada con límite de intentos y encriptación de datos personales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="d-flex align-items-start p-3 rounded-custom" style="background-color: var(--color-background);">
+                    <div class="icon-box warning me-3">
+                        <i class="fas fa-mobile-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2">Acceso 24/7</h5>
+                        <p class="text-muted mb-0">Realiza tus operaciones bancarias en cualquier momento desde cualquier dispositivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Estadísticas -->
+<div class="row g-4 mb-5 text-center">
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in">
+            <div class="card-body p-4">
+                <div class="icon-box primary mx-auto mb-3">
+                    <i class="fas fa-users fa-2x"></i>
+                </div>
+                <h3 class="text-gradient fw-bold mb-1">10K+</h3>
+                <p class="text-muted mb-0">Usuarios Activos</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.1s;">
+            <div class="card-body p-4">
+                <div class="icon-box success mx-auto mb-3">
+                    <i class="fas fa-check-double fa-2x"></i>
+                </div>
+                <h3 class="text-gradient fw-bold mb-1">99.9%</h3>
+                <p class="text-muted mb-0">Disponibilidad</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.2s;">
+            <div class="card-body p-4">
+                <div class="icon-box warning mx-auto mb-3">
+                    <i class="fas fa-bolt fa-2x"></i>
+                </div>
+                <h3 class="text-gradient fw-bold mb-1">&lt;1s</h3>
+                <p class="text-muted mb-0">Tiempo de Respuesta</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-custom rounded-custom h-100 fade-in" style="animation-delay: 0.3s;">
+            <div class="card-body p-4">
+                <div class="icon-box info mx-auto mb-3">
+                    <i class="fas fa-star fa-2x"></i>
+                </div>
+                <h3 class="text-gradient fw-bold mb-1">4.9/5</h3>
+                <p class="text-muted mb-0">Satisfacción</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Final -->
+<div class="hero-section text-center py-5 fade-in">
+    <div class="position-relative" style="z-index: 1;">
+        <h2 class="display-5 fw-bold mb-4">¿Listo para empezar?</h2>
+        <p class="lead mb-4 opacity-75">Únete a miles de colombianos que ya confían en Mi Plata</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="/Register" class="btn btn-light btn-lg px-5 shadow-custom">
+                <i class="fas fa-rocket me-2"></i>Abrir Mi Cuenta Ahora
+            </a>
+            <a href="/Login" class="btn btn-outline-light btn-lg px-5">
+                <i class="fas fa-sign-in-alt me-2"></i>Ya Tengo Cuenta
+            </a>
+        </div>
+    </div>
 </div>
