@@ -10,7 +10,7 @@ namespace SistemaBancario2._0.Pages
 
         public TransaccionesModel(Banco banco)
         {
-            _banco = banco;
+            _banco = Banco.Instancia;
         }
 
         public Usuario UsuarioActual { get; set; }
@@ -27,7 +27,7 @@ namespace SistemaBancario2._0.Pages
             var numeroCuenta = HttpContext.Session.GetString("NumeroCuenta");
             if (string.IsNullOrEmpty(numeroCuenta))
             {
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Loguin");
             }
 
             // Buscar usuario
@@ -35,7 +35,7 @@ namespace SistemaBancario2._0.Pages
             if (UsuarioActual == null)
             {
                 HttpContext.Session.Clear();
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Loguin");
             }
 
             return Page();
@@ -45,7 +45,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostConsignar(decimal monto)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (monto <= 0)
             {
@@ -70,7 +70,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostRetirar(decimal monto)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (monto <= 0)
             {
@@ -116,7 +116,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostTransferir(string cuentaDestino, decimal monto)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (string.IsNullOrEmpty(cuentaDestino) || cuentaDestino.Length != 5)
             {
@@ -176,7 +176,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostCompraCredito(string descripcion, decimal monto, int cuotas)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (!(UsuarioActual.CuentaBancaria is TarjetaCredito tarjeta))
             {
@@ -226,7 +226,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostPagarCredito(decimal monto)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (!(UsuarioActual.CuentaBancaria is TarjetaCredito tarjeta))
             {

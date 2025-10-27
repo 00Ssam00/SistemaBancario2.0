@@ -3,46 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\transacciones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\transacciones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\transacciones.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\transacciones.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\perfil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\perfil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -59,12 +19,68 @@
       "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\cuentaahorros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\loguin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\loguin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\loguin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\loguin.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\transacciones.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\transacciones.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\transacciones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\transacciones.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\perfil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\perfil.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\loguin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\loguin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,14 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\models\\cuenta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|solutionrelative:sistemabancario2.0\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{75A8ACE4-2726-44FD-A816-0F58169E13D6}|SistemaBancario2.0\\SistemaBancario2.0.csproj|c:\\users\\daniela\\desktop\\universidad\\semestre 2025-2\\herramientas de programaci\u00F3n ii\\ejercicios y proyectos\\sistemabancario2.0\\sistemabancario2.0\\models\\transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Bookmark",
@@ -109,8 +117,38 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Register.cshtml.cs",
+              "RelativeToolTip": "SistemaBancario2.0\\Pages\\Register.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:58:48.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Register.cshtml",
+              "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Register.cshtml",
+              "RelativeToolTip": "SistemaBancario2.0\\Pages\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T16:57:59.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\wwwroot\\js\\site.js",
@@ -118,51 +156,50 @@
               "RelativeToolTip": "SistemaBancario2.0\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-26T21:13:32.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T21:13:32.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Banco.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Banco.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\Banco.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Banco.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Models\\Banco.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-22T18:08:40.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Perfil.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Perfil.cshtml.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Perfil.cshtml.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Perfil.cshtml.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Perfil.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T21:00:35.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Perfil.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Perfil.cshtml",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Perfil.cshtml",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Perfil.cshtml",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Perfil.cshtml",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAAALwAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-26T20:59:15.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\wwwroot\\css\\site.css",
@@ -170,51 +207,50 @@
               "RelativeToolTip": "SistemaBancario2.0\\wwwroot\\css\\site.css",
               "ViewState": "AgIAAMABAAAAAAAAAAAiwGECAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-26T20:58:07.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-26T20:58:07.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Transacciones.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Transacciones.cshtml.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Transacciones.cshtml.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Transacciones.cshtml.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Transacciones.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T20:55:26.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Transacciones.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Transacciones.cshtml",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Transacciones.cshtml",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Transacciones.cshtml",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Transacciones.cshtml",
-              "ViewState": "AgIAAGcBAAAAAAAAAAAswKEBAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-26T20:54:48.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswKAAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADUAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-22T23:26:10.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 6,
               "Title": "Logout.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Logout.cshtml.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Logout.cshtml.cs",
@@ -222,23 +258,25 @@
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Logout.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:13:57.758Z"
+              "WhenOpened": "2025-10-22T23:13:57.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "Loguin.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Loguin.cshtml.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Loguin.cshtml.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Loguin.cshtml.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Loguin.cshtml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAsAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:09:00.167Z"
+              "WhenOpened": "2025-10-22T23:09:00.167Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "Loguin.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Loguin.cshtml",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Loguin.cshtml",
@@ -250,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Index.cshtml.cs",
@@ -258,23 +296,25 @@
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Index.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T22:28:12.175Z"
+              "WhenOpened": "2025-10-22T22:28:12.175Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "CuentaAhorros.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\CuentaAhorros.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\CuentaAhorros.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\CuentaAhorros.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Models\\CuentaAhorros.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T21:54:52.02Z"
+              "WhenOpened": "2025-10-22T21:54:52.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "CuentaCorriente.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\CuentaCorriente.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\CuentaCorriente.cs",
@@ -282,11 +322,12 @@
               "RelativeToolTip": "SistemaBancario2.0\\Models\\CuentaCorriente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T21:54:08.36Z"
+              "WhenOpened": "2025-10-22T21:54:08.36Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "TarjetaCredito.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\TarjetaCredito.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\TarjetaCredito.cs",
@@ -294,23 +335,25 @@
               "RelativeToolTip": "SistemaBancario2.0\\Models\\TarjetaCredito.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T21:51:37.434Z"
+              "WhenOpened": "2025-10-22T21:51:37.434Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\Usuario.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Usuario.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T18:08:34.381Z"
+              "WhenOpened": "2025-10-22T18:08:34.381Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Transaccion.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Transaccion.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\Transaccion.cs",
@@ -322,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "Movimiento.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Movimiento.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\Movimiento.cs",
@@ -334,19 +377,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "Cuenta.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Cuenta.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Models\\Cuenta.cs",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Models\\Cuenta.cs",
               "RelativeToolTip": "SistemaBancario2.0\\Models\\Cuenta.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAcwG8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAuwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T18:08:32.071Z"
+              "WhenOpened": "2025-10-22T18:08:32.071Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Program.cs",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Program.cs",
@@ -358,13 +402,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "SistemaBancario2.0\\Pages\\Index.cshtml",
               "ToolTip": "C:\\Users\\Daniela\\Desktop\\Universidad\\Semestre 2025-2\\Herramientas de Programaci\u00F3n II\\Ejercicios y Proyectos\\SistemaBancario2.0\\SistemaBancario2.0\\Pages\\Index.cshtml",
               "RelativeToolTip": "SistemaBancario2.0\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPMAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAOgAAAAAAAAAAADgv/gAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-22T17:59:52.515Z",
               "EditorCaption": ""

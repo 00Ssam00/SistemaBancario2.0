@@ -9,9 +9,10 @@ namespace SistemaBancario2._0.Pages
     {
         private readonly Banco _banco;
 
-        public LoguinModel(Banco banco)
+        public LoguinModel()
         {
-            _banco = banco;
+            _banco = Banco.Instancia;
+
         }
 
         [BindProperty]
@@ -40,13 +41,10 @@ namespace SistemaBancario2._0.Pages
                 // Ya se muestra automáticamente con TempData
             }
 
-            // Obtener intentos restantes de la sesión
-            var intentos = HttpContext.Session.GetInt32("IntentosLogin");
-            if (intentos.HasValue)
-            {
-                IntentosRestantes = intentos.Value;
-            }
+            // Reiniciar los intentos visibles cada vez que se abre la página
+            IntentosRestantes = 3;
         }
+
 
         public IActionResult OnPost()
         {
@@ -55,10 +53,6 @@ namespace SistemaBancario2._0.Pages
             {
                 return Page();
             }
-
-            // Obtener intentos de la sesión
-            var intentosKey = $"Intentos_{NumeroCuenta}";
-            var intentos = HttpContext.Session.GetInt32(intentosKey) ?? 0;
 
             // Buscar usuario
             Usuario usuario = _banco.BuscarUsuarioPorCuenta(NumeroCuenta);
@@ -79,30 +73,31 @@ namespace SistemaBancario2._0.Pages
             // Validar clave
             if (usuario.Clave != Clave)
             {
-                intentos++;
-                HttpContext.Session.SetInt32(intentosKey, intentos);
-                IntentosRestantes = 3 - intentos;
+                usuario.IntentosFallidos++;
 
-                if (intentos >= 3)
+                if (usuario.IntentosFallidos >= 3)
                 {
-                    // Bloquear usuario
                     usuario.Estado = false;
                     MensajeError = "Cuenta bloqueada por exceso de intentos fallidos. Contacta con soporte.";
-                    HttpContext.Session.Remove(intentosKey);
-                    return Page();
+                }
+                else
+                {
+                    int intentosRestantes = 3 - usuario.IntentosFallidos;
+                    MensajeError = $"Clave incorrecta. Te quedan {intentosRestantes} intento(s).";
                 }
 
-                MensajeError = $"Clave incorrecta. Te quedan {IntentosRestantes} intento(s).";
                 return Page();
             }
 
             // Login exitoso
-            HttpContext.Session.Remove(intentosKey);
-            HttpContext.Session.SetString("NumeroCuenta", usuario.CuentaBancaria.NumeroCuenta);
-            HttpContext.Session.SetString("NombreUsuario", usuario.Nombre);
-
+            usuario.IntentosFallidos = 0; // Reiniciar intentos
             MensajeExito = $"¡Bienvenido {usuario.Nombre}!";
+
+            TempData["NumeroCuenta"] = usuario.CuentaBancaria.NumeroCuenta;
+            TempData["NombreUsuario"] = usuario.Nombre;
+
             return RedirectToPage("/Transacciones");
         }
+
     }
 }

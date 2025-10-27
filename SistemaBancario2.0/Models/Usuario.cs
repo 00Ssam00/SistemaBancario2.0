@@ -11,6 +11,8 @@ namespace SistemaBancario2._0.Models
         public string Clave { get; set; }
         public bool Estado { get; set; } // True -> Activo, False -> Bloqueado
         public Cuenta CuentaBancaria { get; set; } // Usuario tiene una cuenta bancaria
+        public int IntentosFallidos { get; set; } = 0;
+
 
         // Constructor de la clase Usuario
         public Usuario(string nombre, string clave, bool estado, Cuenta cuenta)

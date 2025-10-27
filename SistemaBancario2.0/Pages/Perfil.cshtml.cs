@@ -26,7 +26,7 @@ namespace SistemaBancario2._0.Pages
             var numeroCuenta = HttpContext.Session.GetString("NumeroCuenta");
             if (string.IsNullOrEmpty(numeroCuenta))
             {
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Loguin");
             }
 
             // Buscar usuario
@@ -34,7 +34,7 @@ namespace SistemaBancario2._0.Pages
             if (UsuarioActual == null)
             {
                 HttpContext.Session.Clear();
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Loguin");
             }
 
             // Cargar datos del usuario
@@ -47,7 +47,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostActualizarPerfil()
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             if (!ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace SistemaBancario2._0.Pages
         public IActionResult OnPostCambiarClave(string claveActual, string nuevaClave, string confirmarClave)
         {
             CargarUsuarioActual();
-            if (UsuarioActual == null) return RedirectToPage("/Login");
+            if (UsuarioActual == null) return RedirectToPage("/Loguin");
 
             // Validaciones
             if (string.IsNullOrEmpty(claveActual) || string.IsNullOrEmpty(nuevaClave) || string.IsNullOrEmpty(confirmarClave))
