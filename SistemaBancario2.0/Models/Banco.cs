@@ -11,7 +11,7 @@ namespace SistemaBancario2._0.Models
         public List<Usuario> Usuarios { get; } = new List<Usuario>();
         private HashSet<string> numerosExistentes = new HashSet<string>();
 
-        public static Banco Instancia { get; } = new Banco("Mi Plata Bank");
+        public static Banco Instancia { get; } = new Banco("Mi Plata");
 
 
         public Banco(string nombre)

@@ -8,8 +8,9 @@ namespace SistemaBancario2._0.Pages
     {
         private readonly Banco _banco;
 
-        public TransaccionesModel(Banco banco)
+        public TransaccionesModel()
         {
+            // Usar la instancia estática compartida para que usuarios registrados permanezcan.
             _banco = Banco.Instancia;
         }
 
@@ -23,10 +24,18 @@ namespace SistemaBancario2._0.Pages
 
         public IActionResult OnGet()
         {
-            // Verificar si el usuario está logueado
-            var numeroCuenta = HttpContext.Session.GetString("NumeroCuenta");
+            // Intentar obtener el número de cuenta desde TempData sin consumirlo
+            var numeroCuenta = TempData.Peek("NumeroCuenta") as string;
+
+            // Si no está en TempData, intentar también leerlo desde Query (opcional)
             if (string.IsNullOrEmpty(numeroCuenta))
             {
+                numeroCuenta = Request.Query["NumeroCuenta"].ToString();
+            }
+
+            if (string.IsNullOrEmpty(numeroCuenta))
+            {
+                // No hay usuario logueado -> redirigir al login
                 return RedirectToPage("/Loguin");
             }
 
@@ -34,9 +43,15 @@ namespace SistemaBancario2._0.Pages
             UsuarioActual = _banco.BuscarUsuarioPorCuenta(numeroCuenta);
             if (UsuarioActual == null)
             {
-                HttpContext.Session.Clear();
+                // Si no se encuentra el usuario, limpiar cualquier dato y pedir login
+                TempData.Remove("NumeroCuenta");
+                TempData.Remove("NombreUsuario");
                 return RedirectToPage("/Loguin");
             }
+
+            // Mantener el TempData para que siga disponible en la siguiente petición
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
 
             return Page();
         }
@@ -63,6 +78,10 @@ namespace SistemaBancario2._0.Pages
                 MensajeError = $"Error al consignar: {ex.Message}";
             }
 
+            // Mantener TempData para la próxima vista
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
+
             return RedirectToPage();
         }
 
@@ -80,7 +99,6 @@ namespace SistemaBancario2._0.Pages
 
             try
             {
-                // Usar el método específico según el tipo de cuenta
                 if (UsuarioActual.CuentaBancaria is CuentaAhorro cuentaAhorro)
                 {
                     cuentaAhorro.RetirarDirecto("Retiro en cajero", monto);
@@ -108,6 +126,9 @@ namespace SistemaBancario2._0.Pages
             {
                 MensajeError = $"Error al retirar: {ex.Message}";
             }
+
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
 
             return RedirectToPage();
         }
@@ -151,7 +172,6 @@ namespace SistemaBancario2._0.Pages
                     return RedirectToPage();
                 }
 
-                // Ejecutar transferencia
                 var transferencia = new Transferencia(monto);
                 bool exito = transferencia.Ejecutar(_banco, UsuarioActual, destinatario);
 
@@ -168,6 +188,9 @@ namespace SistemaBancario2._0.Pages
             {
                 MensajeError = $"Error al transferir: {ex.Message}";
             }
+
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
 
             return RedirectToPage();
         }
@@ -219,6 +242,9 @@ namespace SistemaBancario2._0.Pages
                 MensajeError = $"Error al realizar la compra: {ex.Message}";
             }
 
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
+
             return RedirectToPage();
         }
 
@@ -256,16 +282,30 @@ namespace SistemaBancario2._0.Pages
                 MensajeError = $"Error al realizar el pago: {ex.Message}";
             }
 
+            TempData.Keep("NumeroCuenta");
+            TempData.Keep("NombreUsuario");
+
             return RedirectToPage();
         }
 
         // Método auxiliar para cargar el usuario actual
         private void CargarUsuarioActual()
         {
-            var numeroCuenta = HttpContext.Session.GetString("NumeroCuenta");
+            // Intentar obtener número de cuenta desde TempData sin consumirlo
+            var numeroCuenta = TempData.Peek("NumeroCuenta") as string;
+
+            // Si no se encuentra, intentar obtenerlo desde query string (por seguridad)
+            if (string.IsNullOrEmpty(numeroCuenta))
+            {
+                numeroCuenta = Request.Query["NumeroCuenta"].ToString();
+            }
+
             if (!string.IsNullOrEmpty(numeroCuenta))
             {
                 UsuarioActual = _banco.BuscarUsuarioPorCuenta(numeroCuenta);
+                // Mantener TempData para próximas requests
+                TempData.Keep("NumeroCuenta");
+                TempData.Keep("NombreUsuario");
             }
         }
 
