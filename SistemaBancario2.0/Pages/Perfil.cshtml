@@ -314,7 +314,7 @@
                     <i class="fas fa-calendar-alt text-muted me-2"></i>
                     <strong>Fecha de apertura:</strong>
                     <span class="text-muted">
-                        @(Model.UsuarioActual.CuentaBancaria.HistorialMovimientos.FirstOrDefault()?.FechaHora.ToString("dd/MM/yyyy") ?? "N/A")
+                        @(Model.UsuarioActual.CuentaBancaria.FechaApertura.ToString("dd/MM/yyyy"))
                     </span>
                 </div>
 

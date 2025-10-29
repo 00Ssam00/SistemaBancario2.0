@@ -5,13 +5,14 @@ namespace SistemaBancario2._0.Pages
 {
     public class LogoutModel : PageModel
     {
-        public IActionResult OnGet()
+        public IActionResult OnPost()
         {
             // Limpiar toda la sesión
             HttpContext.Session.Clear();
-            
-            // Redirigir al inicio
-            return RedirectToPage("/Index");
+
+            // Redirigir al login
+            return RedirectToPage("/Loguin");
         }
     }
 }
+

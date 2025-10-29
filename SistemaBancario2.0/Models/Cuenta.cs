@@ -8,6 +8,8 @@ namespace SistemaBancario2._0.Models
         public string NumeroCuenta { get; set; } // Número único de cuenta
         public decimal Saldo { get; set; } // Saldo actual de la cuenta
         public List<Movimiento> HistorialMovimientos { get; set; } // Historial de movimientos de la cuenta
+        public DateTime FechaApertura { get; set; }
+
 
         // Constructor de la clase Cuenta
         public Cuenta(string numeroCuenta, decimal saldo = 0)
@@ -15,6 +17,7 @@ namespace SistemaBancario2._0.Models
             NumeroCuenta = numeroCuenta;
             Saldo = saldo;
             HistorialMovimientos = new List<Movimiento>();
+            FechaApertura = DateTime.Now;
         }
 
         // Método para generar número único de cuenta
