@@ -1,0 +1,14 @@
+@page
+@model SistemaBancario2._0.Pages.LogoutModel
+@{
+    // Esta página existe únicamente para que el handler POST (/Logout) funcione correctamente.
+    // El OnPost en LogoutModel limpia la sesión y redirige al login.
+}
+
+<div class="text-center mt-5">
+    <h3>Saliendo...</h3>
+    <p class="text-muted">Si no se redirige automáticamente, haz clic en el botón.</p>
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Salir</button>
+    </form>
+</div>

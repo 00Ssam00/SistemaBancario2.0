@@ -149,9 +149,22 @@ namespace SistemaBancario2._0.Models
                 Usuarios.Add(usuarioPrueba);
                 Console.WriteLine("Usuario de prueba creado - Cuenta: 12345, Clave: 1234, Saldo: $1,000,000");
             }
-
             Usuario nuevo = Usuario.Registrar(numerosExistentes);
             Usuarios.Add(nuevo);
+        }
+
+        // Seed no interactivo para crear cuentas predeterminadas usadas por la UI (por ejemplo, cuenta 12345)
+        public void SeedPredeterminados()
+        {
+            if (!numerosExistentes.Contains("12345"))
+            {
+                string numeroCuentaPrueba = "12345";
+                numerosExistentes.Add(numeroCuentaPrueba);
+                Cuenta cuentaPrueba = new Cuenta(numeroCuentaPrueba, 1000000);
+                Usuario usuarioPrueba = new Usuario("UsuarioPrueba", "1234", true, cuentaPrueba);
+                Usuarios.Add(usuarioPrueba);
+                Console.WriteLine("Usuario de prueba creado - Cuenta: 12345, Clave: 1234, Saldo: $1,000,000 (seed)");
+            }
         }
 
         public Usuario? IniciarSesion()

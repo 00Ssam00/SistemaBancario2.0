@@ -16,6 +16,9 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
 }
 
+// Sembrar usuarios predeterminados (cuenta de prueba) para la interfaz web
+SistemaBancario2._0.Models.Banco.Instancia.SeedPredeterminados();
+
 app.UseStaticFiles();
 
 app.UseRouting();

@@ -7,7 +7,8 @@ namespace SistemaBancario2._0.Pages
     {
         public IActionResult OnPost()
         {
-            // Limpiar toda la sesión
+            // Limpiar TempData y toda la sesión para asegurarnos de cerrar la sesión correctamente
+            TempData.Clear();
             HttpContext.Session.Clear();
 
             // Redirigir al login
