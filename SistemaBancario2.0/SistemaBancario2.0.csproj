@@ -8,11 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Logout.cshtml.cs" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Pages\Logout.cshtml.cs" />
   </ItemGroup>
 
 </Project>
