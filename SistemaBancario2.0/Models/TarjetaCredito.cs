@@ -37,23 +37,11 @@ namespace SistemaBancario2._0.Models
                 return false;
             }
 
-            // Calcular intereses según el número de cuotas
-            decimal tasaInteresMensual = ObtenerTasaInteres(numeroCuotas);
-            decimal interesTotal = 0;
-            decimal pagoMensual = 0;
-
-            if (tasaInteresMensual > 0)
-            {
-                // Fórmula de cuota fija con interés compuesto
-                decimal factorInteres = (decimal)Math.Pow((double)(1 + tasaInteresMensual), numeroCuotas);
-                pagoMensual = monto * (tasaInteresMensual * factorInteres) / (factorInteres - 1);
-                interesTotal = (pagoMensual * numeroCuotas) - monto;
-            }
-            else
-            {
-                // Sin intereses
-                pagoMensual = monto / numeroCuotas;
-            }
+            // Calcular plan de pagos (tasa, interés total y pago mensual)
+            var plan = CalcularPlanPago(monto, numeroCuotas);
+            decimal tasaInteresMensual = plan.tasaInteresMensual;
+            decimal interesTotal = plan.interesTotal;
+            decimal pagoMensual = plan.pagoMensual;
 
             // Actualizar crédito disponible y deuda
             CreditoDisponible -= monto;
@@ -94,6 +82,32 @@ namespace SistemaBancario2._0.Models
             Console.WriteLine("----------------------------\n");
 
             return true;
+        }
+
+        // Calcula el plan de pagos para una compra: tasa mensual, interés total y pago mensual
+        public (decimal tasaInteresMensual, decimal interesTotal, decimal pagoMensual) CalcularPlanPago(decimal monto, int numeroCuotas)
+        {
+            if (monto <= 0 || numeroCuotas <= 0)
+            {
+                return (0m, 0m, 0m);
+            }
+
+            decimal tasaInteresMensual = ObtenerTasaInteres(numeroCuotas);
+            decimal interesTotal = 0m;
+            decimal pagoMensual = 0m;
+
+            if (tasaInteresMensual > 0)
+            {
+                decimal factorInteres = (decimal)Math.Pow((double)(1 + tasaInteresMensual), numeroCuotas);
+                pagoMensual = monto * (tasaInteresMensual * factorInteres) / (factorInteres - 1);
+                interesTotal = (pagoMensual * numeroCuotas) - monto;
+            }
+            else
+            {
+                pagoMensual = monto / numeroCuotas;
+            }
+
+            return (tasaInteresMensual, interesTotal, pagoMensual);
         }
 
         // Determina la tasa de interés según el número de cuotas

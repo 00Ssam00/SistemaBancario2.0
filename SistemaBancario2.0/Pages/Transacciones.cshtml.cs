@@ -10,7 +10,7 @@ namespace SistemaBancario2._0.Pages
 
         public TransaccionesModel()
         {
-            // Usar la instancia estática compartida para que usuarios registrados permanezcan.
+            // Usar la instancia estï¿½tica compartida para que usuarios registrados permanezcan.
             _banco = Banco.Instancia;
         }
 
@@ -24,10 +24,10 @@ namespace SistemaBancario2._0.Pages
 
         public IActionResult OnGet()
         {
-            // Intentar obtener el número de cuenta desde TempData sin consumirlo
+            // Intentar obtener el nï¿½mero de cuenta desde TempData sin consumirlo
             var numeroCuenta = TempData.Peek("NumeroCuenta") as string;
 
-            // Si no está en TempData, intentar también leerlo desde Query (opcional)
+            // Si no estï¿½ en TempData, intentar tambiï¿½n leerlo desde Query (opcional)
             if (string.IsNullOrEmpty(numeroCuenta))
             {
                 numeroCuenta = Request.Query["NumeroCuenta"].ToString();
@@ -49,7 +49,7 @@ namespace SistemaBancario2._0.Pages
                 return RedirectToPage("/Loguin");
             }
 
-            // Mantener el TempData para que siga disponible en la siguiente petición
+            // Mantener el TempData para que siga disponible en la siguiente peticiï¿½n
             TempData.Keep("NumeroCuenta");
             TempData.Keep("NombreUsuario");
 
@@ -70,15 +70,15 @@ namespace SistemaBancario2._0.Pages
 
             try
             {
-                UsuarioActual.CuentaBancaria.ConsignarDirecto("Consignación en cajero", monto);
-                MensajeExito = $"Consignación exitosa de ${monto:N0}. Nuevo saldo: ${UsuarioActual.CuentaBancaria.Saldo:N0}";
+                UsuarioActual.CuentaBancaria.ConsignarDirecto("Consignaciï¿½n en cajero", monto);
+                MensajeExito = $"Consignaciï¿½n exitosa de ${monto:N0}. Nuevo saldo: ${UsuarioActual.CuentaBancaria.Saldo:N0}";
             }
             catch (Exception ex)
             {
                 MensajeError = $"Error al consignar: {ex.Message}";
             }
 
-            // Mantener TempData para la próxima vista
+            // Mantener TempData para la prï¿½xima vista
             TempData.Keep("NumeroCuenta");
             TempData.Keep("NombreUsuario");
 
@@ -109,7 +109,7 @@ namespace SistemaBancario2._0.Pages
                     cuentaCorriente.RetirarDirecto("Retiro en cajero", monto);
                     if (UsuarioActual.CuentaBancaria.Saldo < 0)
                     {
-                        MensajeExito = $"Retiro exitoso de ${monto:N0}. Se utilizó sobregiro. Saldo: ${UsuarioActual.CuentaBancaria.Saldo:N0}";
+                        MensajeExito = $"Retiro exitoso de ${monto:N0}. Se utilizï¿½ sobregiro. Saldo: ${UsuarioActual.CuentaBancaria.Saldo:N0}";
                     }
                     else
                     {
@@ -141,7 +141,7 @@ namespace SistemaBancario2._0.Pages
 
             if (string.IsNullOrEmpty(cuentaDestino) || cuentaDestino.Length != 5)
             {
-                MensajeError = "El número de cuenta debe tener 5 dígitos.";
+                MensajeError = "El nï¿½mero de cuenta debe tener 5 dï¿½gitos.";
                 return RedirectToPage();
             }
 
@@ -195,7 +195,7 @@ namespace SistemaBancario2._0.Pages
             return RedirectToPage();
         }
 
-        // Handler: Compra con Crédito
+        // Handler: Compra con Crï¿½dito
         public IActionResult OnPostCompraCredito(string descripcion, decimal monto, int cuotas)
         {
             CargarUsuarioActual();
@@ -203,13 +203,13 @@ namespace SistemaBancario2._0.Pages
 
             if (!(UsuarioActual.CuentaBancaria is TarjetaCredito tarjeta))
             {
-                MensajeError = "Esta operación solo está disponible para tarjetas de crédito.";
+                MensajeError = "Esta operaciï¿½n solo estï¿½ disponible para tarjetas de crï¿½dito.";
                 return RedirectToPage();
             }
 
             if (string.IsNullOrEmpty(descripcion))
             {
-                MensajeError = "Debes ingresar una descripción para la compra.";
+                MensajeError = "Debes ingresar una descripciï¿½n para la compra.";
                 return RedirectToPage();
             }
 
@@ -221,7 +221,7 @@ namespace SistemaBancario2._0.Pages
 
             if (cuotas <= 0)
             {
-                MensajeError = "El número de cuotas debe ser mayor a cero.";
+                MensajeError = "El nï¿½mero de cuotas debe ser mayor a cero.";
                 return RedirectToPage();
             }
 
@@ -230,11 +230,23 @@ namespace SistemaBancario2._0.Pages
                 bool exito = tarjeta.RealizarCompra(monto, cuotas, descripcion);
                 if (exito)
                 {
-                    MensajeExito = $"Compra realizada: {descripcion} por ${monto:N0} en {cuotas} cuota(s). Crédito disponible: ${tarjeta.CreditoDisponible:N0}";
+                    // Calcular y guardar resumen del plan de pagos en TempData para mostrar en la UI
+                    var plan = tarjeta.CalcularPlanPago(monto, cuotas);
+                    TempData["TasaInteresMensual"] = plan.tasaInteresMensual.ToString("P2");
+                    TempData["InteresTotal"] = plan.interesTotal.ToString("N0");
+                    TempData["PagoMensual"] = plan.pagoMensual.ToString("N0");
+                    TempData["TotalAPagar"] = (monto + plan.interesTotal).ToString("N0");
+
+                    MensajeExito = $"Compra realizada: {descripcion} por ${monto:N0} en {cuotas} cuota(s). CrÃ©dito disponible: ${tarjeta.CreditoDisponible:N0}";
                 }
                 else
                 {
                     MensajeError = "No se pudo realizar la compra.";
+                    // Limpiar posibles datos previos de plan
+                    TempData.Remove("TasaInteresMensual");
+                    TempData.Remove("InteresTotal");
+                    TempData.Remove("PagoMensual");
+                    TempData.Remove("TotalAPagar");
                 }
             }
             catch (Exception ex)
@@ -248,7 +260,7 @@ namespace SistemaBancario2._0.Pages
             return RedirectToPage();
         }
 
-        // Handler: Pagar Tarjeta de Crédito
+        // Handler: Pagar Tarjeta de Crï¿½dito
         public IActionResult OnPostPagarCredito(decimal monto)
         {
             CargarUsuarioActual();
@@ -256,7 +268,7 @@ namespace SistemaBancario2._0.Pages
 
             if (!(UsuarioActual.CuentaBancaria is TarjetaCredito tarjeta))
             {
-                MensajeError = "Esta operación solo está disponible para tarjetas de crédito.";
+                MensajeError = "Esta operaciï¿½n solo estï¿½ disponible para tarjetas de crï¿½dito.";
                 return RedirectToPage();
             }
 
@@ -275,7 +287,7 @@ namespace SistemaBancario2._0.Pages
             try
             {
                 tarjeta.RealizarPago(monto);
-                MensajeExito = $"Pago realizado de ${monto:N0}. Deuda restante: ${tarjeta.DeudaTotal:N0}. Crédito disponible: ${tarjeta.CreditoDisponible:N0}";
+                MensajeExito = $"Pago realizado de ${monto:N0}. Deuda restante: ${tarjeta.DeudaTotal:N0}. Crï¿½dito disponible: ${tarjeta.CreditoDisponible:N0}";
             }
             catch (Exception ex)
             {
@@ -288,10 +300,10 @@ namespace SistemaBancario2._0.Pages
             return RedirectToPage();
         }
 
-        // Método auxiliar para cargar el usuario actual
+        // Mï¿½todo auxiliar para cargar el usuario actual
         private void CargarUsuarioActual()
         {
-            // Intentar obtener número de cuenta desde TempData sin consumirlo
+            // Intentar obtener nï¿½mero de cuenta desde TempData sin consumirlo
             var numeroCuenta = TempData.Peek("NumeroCuenta") as string;
 
             // Si no se encuentra, intentar obtenerlo desde query string (por seguridad)
@@ -303,13 +315,13 @@ namespace SistemaBancario2._0.Pages
             if (!string.IsNullOrEmpty(numeroCuenta))
             {
                 UsuarioActual = _banco.BuscarUsuarioPorCuenta(numeroCuenta);
-                // Mantener TempData para próximas requests
+                // Mantener TempData para prï¿½ximas requests
                 TempData.Keep("NumeroCuenta");
                 TempData.Keep("NombreUsuario");
             }
         }
 
-        // Método para obtener el nombre del tipo de cuenta
+        // Mï¿½todo para obtener el nombre del tipo de cuenta
         public string ObtenerTipoCuenta()
         {
             if (UsuarioActual?.CuentaBancaria == null)
@@ -319,7 +331,7 @@ namespace SistemaBancario2._0.Pages
             {
                 CuentaAhorro => "Cuenta de Ahorro",
                 CuentaCorriente => "Cuenta Corriente",
-                TarjetaCredito => "Tarjeta de Crédito",
+                TarjetaCredito => "Tarjeta de Crï¿½dito",
                 _ => "Cuenta Bancaria"
             };
         }

@@ -119,6 +119,44 @@
     </div>
 }
 
+<!-- Resumen de compra (mostrar solo después de realizar una compra con tarjeta) -->
+@{
+    var pagoMensualTemp = TempData["PagoMensual"] as string;
+    var interesTotalTemp = TempData["InteresTotal"] as string;
+    var tasaTemp = TempData["TasaInteresMensual"] as string;
+    var totalAPagarTemp = TempData["TotalAPagar"] as string;
+}
+
+@if (!string.IsNullOrEmpty(pagoMensualTemp))
+{
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">
+            <h5 class="mb-0"><i class="fas fa-file-invoice-dollar me-2"></i>Resumen de Compra</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Pago mensual</strong>
+                    <div class="fs-5 text-dark">$@pagoMensualTemp</div>
+                </div>
+                <div class="col-md-3">
+                    <strong>Interés total</strong>
+                    <div class="fs-6 text-dark">$@interesTotalTemp</div>
+                </div>
+                <div class="col-md-3">
+                    <strong>Tasa (mensual)</strong>
+                    <div class="fs-6 text-dark">@tasaTemp</div>
+                </div>
+                <div class="col-md-3">
+                    <strong>Total a pagar</strong>
+                    <div class="fs-6 text-dark">$@totalAPagarTemp</div>
+                </div>
+            </div>
+            <small class="text-muted d-block mt-3">El resumen corresponde a la última compra realizada.</small>
+        </div>
+    </div>
+}
+
 <!-- Menú de operaciones -->
 <div class="row g-4 mb-4">
     <div class="col-md-4">
